@@ -55,7 +55,7 @@ const App = () => {
   };
 
   const handleDisabled = () => {
-    return !teamNames.length || !matchPerTeam || !inningsOver;
+    return !teamNames.length || !matchPerTeam || (!inningsOver || inningsOver == 0);
   };
 
   return (
