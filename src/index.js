@@ -25,6 +25,13 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: "8px",
 }));
 
+const KeyCodes = {
+  comma: 188,
+  enter: 13
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
 const App = () => {
   const [tags, setTags] = useState([]);
   const [teamNames, setTeamNames] = useState([]);
@@ -78,6 +85,7 @@ const App = () => {
             tags={tags}
             handleDelete={handleDelete}
             handleAddition={handleAddition}
+            delimiters={delimiters}
             inputFieldPosition="bottom"
             autocomplete
             editable
