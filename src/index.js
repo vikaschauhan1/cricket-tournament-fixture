@@ -104,7 +104,7 @@ const App = () => {
             type="number"
             variant="standard"
             value={matchPerTeam}
-            onChange={(e) => setMatchPerTeam(e.target.value)}
+            onChange={(e) => setMatchPerTeam(e.target.value); setIsGenerated(false)}
           />
         </Box>
         <Box>
@@ -116,7 +116,7 @@ const App = () => {
             type="number"
             variant="standard"
             value={inningsOver}
-            onChange={(e) => setInningsOver(e.target.value)}
+            onChange={(e) => setInningsOver(e.target.value); setIsGenerated(false)}
           />
         </Box>
 
