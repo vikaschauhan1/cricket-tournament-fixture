@@ -39,15 +39,18 @@ const App = () => {
   const [inningsOver, setInningsOver] = useState();
   const [schedule, setSchedule] = useState([]);
   const [error, setError] = useState("");
+  const [isGenerated, setIsGenerated] = useState(false);
 
   const handleDelete = (i) => {
     setTags(tags.filter((_, index) => index !== i));
     setTeamNames(teamNames.filter((_, index) => index !== i));
+    setIsGenerated(false)
   };
 
   const handleAddition = (tag) => {
     setTeamNames((oldState) => [...oldState, tag.text]);
     setTags([...tags, tag]);
+    setIsGenerated(false)
   };
 
   const handleFixture = () => {
@@ -58,11 +61,12 @@ const App = () => {
     } else {
       setSchedule(result.data);
       setError("");
+      setIsGenerated(true)
     }
   };
 
   const handleDisabled = () => {
-    return !teamNames.length || !matchPerTeam || (!inningsOver || inningsOver == 0);
+    return (!teamNames.length || !matchPerTeam || (!inningsOver || inningsOver == 0)) || isGenerated;
   };
 
   return (
