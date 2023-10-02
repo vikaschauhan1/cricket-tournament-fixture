@@ -3,7 +3,7 @@ function getFixture(teamNames, totalMaches = 0, counter = { attempts: 1 }) {
   const colors = {};
   const teams = [...teamNames];
   const numberOfMatches = parseInt(totalMaches);
-  const randomColors = ['#0088FE', '#808000', '#FF4500','#FFBB28', '#00FF00', '#FF8042', '#006400', '#00C49F', '#8B008B'];
+  const randomColors = ['#0088FE', '#808000', '#FF4500','#FFBB28', '#00FF00', '#FF8042', '#006400', '#00C49F', '#8B008B', '#407a47', '#963665', '#6228b8'];
 
   teams.forEach((value, index) => {
     fixture[value] = [];
